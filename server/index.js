@@ -40,7 +40,7 @@ app.get('/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() })
 })
 
-const PORT = process.env.PORT || 3001
+const PORT = process.env.PORT || 3002
 
 httpServer.listen(PORT, () => {
   console.log(`🎮 Apalabrados server running on port ${PORT}`)

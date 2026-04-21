@@ -13,7 +13,10 @@
       "Bash(rmdir /c/proyectos/Claude/Apalabrados/api)",
       "Bash(netstat -tuln)",
       "Bash(git add *)",
-      "Bash(git commit *)"
+      "Bash(git commit *)",
+      "Bash(netstat -ano)",
+      "Bash(powershell -Command \"Get-NetTCPConnection -LocalPort 3001 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess\")",
+      "Bash(taskkill *)"
     ]
   }
 }
