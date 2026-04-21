@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom'
 import { socket } from './socket/socket'
 import { useRoomStore } from './store/useRoomStore'
 import { useGameStore } from './store/useGameStore'
@@ -9,6 +9,7 @@ import GamePage from './pages/GamePage'
 import ResultsPage from './pages/ResultsPage'
 
 function App() {
+  const navigate = useNavigate()
   const { setStatus, setMyPlayerId, setRoomCode, setPlayers, setMyNickname } = useRoomStore()
   const { setGameState, setMyPlayerId: setGamePlayerId, setMyRack, setBoard, setCurrentPlayer, setTileBagCount } = useGameStore()
 
@@ -38,6 +39,7 @@ function App() {
 
     // Handle game started
     socket.on('game:started', (data) => {
+      console.log('✓ game:started recibido:', data)
       const { roomState } = data
       setStatus('playing')
       setPlayers(roomState.players)
@@ -47,6 +49,8 @@ function App() {
       setGameState({
         gameStatus: 'playing'
       })
+      console.log('✓ Estado actualizado, navegando a GamePage')
+      navigate('/game')
     })
 
     // Handle rack received
