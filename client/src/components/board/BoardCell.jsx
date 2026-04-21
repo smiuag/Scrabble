@@ -49,7 +49,7 @@ function BoardCell({ row, col, cell }) {
       onClick={handleCellClick}
     >
       {cell?.tile ? (
-        <PlacedTile tile={cell.tile} />
+        <PlacedTile tile={cell.tile} isPending={cell.isPending} />
       ) : (
         <span className={styles.multiplierLabel}>{getMultiplierLabel()}</span>
       )}
