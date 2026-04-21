@@ -8,7 +8,7 @@ import LobbyPage from './pages/LobbyPage'
 import GamePage from './pages/GamePage'
 import ResultsPage from './pages/ResultsPage'
 
-function App() {
+function AppContent() {
   const navigate = useNavigate()
   const { setStatus, setMyPlayerId, setRoomCode, setPlayers, setMyNickname } = useRoomStore()
   const { setGameState, setMyPlayerId: setGamePlayerId, setMyRack, setBoard, setCurrentPlayer, setTileBagCount } = useGameStore()
@@ -100,16 +100,22 @@ function App() {
   }, [setStatus, setMyPlayerId, setRoomCode, setPlayers, setGamePlayerId, setGameState, setMyRack, setBoard, setCurrentPlayer, setTileBagCount])
 
   return (
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/lobby" element={<LobbyPage />} />
+        <Route path="/game" element={<GamePage />} />
+        <Route path="/results" element={<ResultsPage />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </div>
+  )
+}
+
+function App() {
+  return (
     <Router>
-      <div className="app">
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/lobby" element={<LobbyPage />} />
-          <Route path="/game" element={<GamePage />} />
-          <Route path="/results" element={<ResultsPage />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </div>
+      <AppContent />
     </Router>
   )
 }
