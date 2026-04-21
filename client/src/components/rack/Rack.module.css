@@ -1,0 +1,38 @@
+.rackContainer {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  width: 100%;
+}
+
+.rack {
+  display: flex;
+  gap: 8px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 10px 5px;
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.emptySlot {
+  width: 45px;
+  height: 60px;
+  border: 2px dashed #d1d5db;
+  border-radius: 4px;
+  background: #f3f4f6;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .rackContainer {
+    padding: 10px;
+  }
+
+  .rack {
+    gap: 6px;
+  }
+}

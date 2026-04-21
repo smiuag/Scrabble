@@ -1,0 +1,51 @@
+.cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-weight: 600;
+  font-size: 0.75em;
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.default {
+  background-color: var(--cell-default);
+  color: #8b7355;
+}
+
+.dl {
+  background-color: var(--cell-dl);
+  color: #2b6cb0;
+}
+
+.tl {
+  background-color: var(--cell-tl);
+  color: white;
+}
+
+.dp {
+  background-color: var(--cell-dp);
+  color: #c53030;
+}
+
+.tp {
+  background-color: var(--cell-tp);
+  color: white;
+}
+
+.center {
+  background-color: var(--cell-center);
+  color: #c53030;
+}
+
+.multiplierLabel {
+  position: absolute;
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+.cell:hover {
+  opacity: 0.9;
+}

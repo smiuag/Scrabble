@@ -1,0 +1,76 @@
+.scoreboard {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.header h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #374151;
+}
+
+.tileBagInfo {
+  font-size: 0.9em;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.currentTurn {
+  background: #fef3c7;
+  border-left: 3px solid #f59e0b;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.currentTurn p {
+  margin: 0;
+  color: #92400e;
+  font-size: 0.95em;
+}
+
+.playersList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.playerItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s;
+}
+
+.playerItem.active {
+  background: #dbeafe;
+  border-color: #2563eb;
+  font-weight: 600;
+}
+
+.playerName {
+  color: #374151;
+  font-weight: 500;
+}
+
+.playerScore {
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 1.1em;
+}

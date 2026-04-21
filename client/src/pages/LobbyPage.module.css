@@ -1,0 +1,152 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1f2937;
+}
+
+.roomInfo {
+  background: #f0f9ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  border-left: 4px solid #2563eb;
+}
+
+.roomInfo p {
+  margin: 8px 0;
+  color: #374151;
+}
+
+.roomInfo strong {
+  color: #1f2937;
+  margin-right: 8px;
+}
+
+.roomCode {
+  font-family: monospace;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #2563eb;
+  display: block;
+  margin-top: 8px;
+  letter-spacing: 2px;
+}
+
+.hint {
+  font-size: 0.9em;
+  color: #6b7280;
+  margin-top: 10px;
+}
+
+.playersList {
+  margin: 30px 0;
+}
+
+.playersList h2 {
+  font-size: 1.2em;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.playersList ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.playerName {
+  font-weight: 500;
+  color: #374151;
+}
+
+.badge {
+  font-size: 0.8em;
+  padding: 4px 8px;
+  background: #10b981;
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btnStart {
+  padding: 12px 20px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnStart:hover:not(:disabled) {
+  background-color: #059669;
+  transform: translateY(-1px);
+}
+
+.btnStart:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.btnBack {
+  padding: 12px 20px;
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnBack:hover {
+  background-color: #dc2626;
+  transform: translateY(-1px);
+}
+
+.waiting {
+  text-align: center;
+  color: #6b7280;
+  font-style: italic;
+  padding: 20px;
+}

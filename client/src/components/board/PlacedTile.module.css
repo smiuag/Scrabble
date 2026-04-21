@@ -1,0 +1,27 @@
+.tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  height: 95%;
+  background: var(--tile-bg);
+  border: 2px solid var(--tile-border);
+  border-radius: 2px;
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.5), 0 2px 4px var(--tile-shadow);
+  font-family: var(--font-tile);
+  font-weight: bold;
+  color: var(--tile-border);
+  user-select: none;
+}
+
+.letter {
+  font-size: 1.6em;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.points {
+  font-size: 0.6em;
+  margin-top: 1px;
+}

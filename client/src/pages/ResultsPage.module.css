@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+}
+
+.title {
+  font-size: 2.2em;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #1f2937;
+}
+
+.winner {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.winnerLabel {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.winnerName {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.winnerScore {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.scoresList {
+  margin: 30px 0;
+}
+
+.scoresList h2 {
+  font-size: 1.2em;
+  color: #374151;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.scoresList ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.scoreItem {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #2563eb;
+  color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  margin-right: 15px;
+  flex-shrink: 0;
+}
+
+.name {
+  flex: 1;
+  font-weight: 500;
+  color: #374151;
+}
+
+.score {
+  font-weight: 600;
+  color: #2563eb;
+  font-size: 1.1em;
+}
+
+.btnHome {
+  width: 100%;
+  padding: 12px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 20px;
+}
+
+.btnHome:hover {
+  background-color: #1e40af;
+  transform: translateY(-1px);
+}

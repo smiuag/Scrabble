@@ -1,0 +1,48 @@
+.controls {
+  display: flex;
+  gap: 10px;
+  padding: 15px 20px;
+  background: white;
+  border-top: 1px solid #e5e7eb;
+  width: 100%;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btnPlay {
+  padding: 10px 20px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnPlay:hover {
+  background-color: #059669;
+  transform: translateY(-1px);
+}
+
+.btnSecondary {
+  padding: 10px 20px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btnSecondary:hover {
+  background-color: #1e40af;
+  transform: translateY(-1px);
+}
+
+.waitingTurn {
+  color: #6b7280;
+  font-style: italic;
+  margin: 0;
+}
