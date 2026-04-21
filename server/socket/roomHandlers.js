@@ -88,29 +88,39 @@ export const registerRoomHandlers = (io, socket, gameManager, dictionary) => {
     })
   })
 
-  socket.on('room:start', () => {
-    const roomCode = socket.data.roomCode
+  socket.on('room:start', (data) => {
+    console.log('📌 [room:start] Recibido de socket:', socket.id)
+    const roomCode = data?.roomCode || socket.data.roomCode
+    console.log('📌 roomCode:', roomCode, 'socket.data.roomCode:', socket.data.roomCode)
+
     if (!roomCode) {
+      console.log('✗ No está en sala')
       socket.emit('room:error', { code: 'NOT_IN_ROOM', message: 'No estás en una sala' })
       return
     }
 
     const room = gameManager.getRoom(roomCode)
     if (!room) {
+      console.log('✗ Sala no encontrada')
       socket.emit('room:error', { code: 'ROOM_NOT_FOUND', message: 'Sala no encontrada' })
       return
     }
 
+    console.log('📌 room.hostId:', room.hostId, 'socket.id:', socket.id)
     if (room.hostId !== socket.id) {
+      console.log('✗ No es el host')
       socket.emit('room:error', { code: 'NOT_HOST', message: 'Solo el anfitrión puede iniciar' })
       return
     }
 
+    console.log('📌 Iniciando juego con', room.players.length, 'jugadores')
     if (!room.startGame()) {
+      console.log('✗ No se puede iniciar el juego')
       socket.emit('room:error', { code: 'CANNOT_START', message: 'No hay suficientes jugadores' })
       return
     }
 
+    console.log('✓ Juego iniciado')
     io.to(roomCode).emit('game:started', {
       roomState: room.getPublicState()
     })

@@ -9,19 +9,19 @@ function LobbyPage() {
   const { roomCode, players, myPlayerId, myNickname, isHost, setIsHost } = useRoomStore()
 
   useEffect(() => {
+    console.log('🏠 LobbyPage - roomCode:', roomCode, 'myPlayerId:', myPlayerId, 'isHost:', isHost, 'players:', players)
     if (!roomCode) {
       navigate('/')
     }
-  }, [roomCode, navigate])
-
-  useEffect(() => {
-    // isHost viene directamente de la store (se asigna en HomePage)
-    // Solo necesitamos mantenerlo actualizado
-  }, [])
+  }, [roomCode, navigate, myPlayerId, isHost, players])
 
   const handleStart = () => {
-    if (isHost) {
-      socket.emit('room:start')
+    console.log('📌 handleStart - isHost:', isHost, 'roomCode:', roomCode, 'players.length:', players.length)
+    if (isHost && players.length >= 2) {
+      console.log('✓ Emitting room:start con roomCode:', roomCode)
+      socket.emit('room:start', { roomCode })
+    } else {
+      console.log('✗ No se puede iniciar - isHost:', isHost, 'players >= 2:', players.length >= 2)
     }
   }
 
