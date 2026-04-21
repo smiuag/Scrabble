@@ -15,14 +15,9 @@ function LobbyPage() {
   }, [roomCode, navigate])
 
   useEffect(() => {
-    // Check if this player is the host
-    if (players.length > 0) {
-      // Find my socket id from players
-      const me = players.find(p => p.nickname === myNickname)
-      // If I'm the first player in the list, I'm the host (simplified check)
-      setIsHost(players[0].nickname === myNickname)
-    }
-  }, [players, myNickname, setIsHost])
+    // isHost viene directamente de la store (se asigna en HomePage)
+    // Solo necesitamos mantenerlo actualizado
+  }, [])
 
   const handleStart = () => {
     if (isHost) {

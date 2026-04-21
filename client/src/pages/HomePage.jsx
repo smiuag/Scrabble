@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { socket } from '../socket/socket'
 import { useRoomStore } from '../store/useRoomStore'
+import { useGameStore } from '../store/useGameStore'
 import styles from './HomePage.module.css'
 
 function HomePage() {
@@ -20,14 +21,22 @@ function HomePage() {
 
     setLoading(true)
     setError('')
-    setMyNickname(nickname)
+    const trimmedNickname = nickname.trim()
+    setMyNickname(trimmedNickname)
 
     socket.emit('room:create', {
-      nickname: nickname.trim(),
-      settings: { maxPlayers: 2 }
+      nickname: trimmedNickname,
+      settings: { maxPlayers: 4 }
     })
 
-    socket.once('room:created', () => {
+    socket.once('room:created', (data) => {
+      const { roomCode, playerId } = data
+      useRoomStore.setState({
+        roomCode,
+        myPlayerId: playerId,
+        myNickname: trimmedNickname,
+        isHost: true
+      })
       navigate('/lobby')
     })
 
@@ -45,14 +54,23 @@ function HomePage() {
 
     setLoading(true)
     setError('')
-    setMyNickname(nickname)
+    const trimmedNickname = nickname.trim()
+    const trimmedCode = roomCode.toUpperCase()
+    setMyNickname(trimmedNickname)
 
     socket.emit('room:join', {
-      roomCode: roomCode.toUpperCase(),
-      nickname: nickname.trim()
+      roomCode: trimmedCode,
+      nickname: trimmedNickname
     })
 
-    socket.once('room:joined', () => {
+    socket.once('room:joined', (data) => {
+      const { playerId } = data
+      useRoomStore.setState({
+        roomCode: trimmedCode,
+        myPlayerId: playerId,
+        myNickname: trimmedNickname,
+        isHost: false
+      })
       navigate('/lobby')
     })
 

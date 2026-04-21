@@ -10,7 +10,10 @@
       "Bash(npm --version)",
       "Bash(npm list *)",
       "Bash(rm /c/proyectos/Claude/Apalabrados/vercel.json /c/proyectos/Claude/Apalabrados/api/socket.js)",
-      "Bash(rmdir /c/proyectos/Claude/Apalabrados/api)"
+      "Bash(rmdir /c/proyectos/Claude/Apalabrados/api)",
+      "Bash(netstat -tuln)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
     ]
   }
 }
