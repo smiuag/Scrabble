@@ -14,6 +14,8 @@ function GamePage() {
   const gameStatus = useGameStore((state) => state.gameStatus)
   const roomCode = useRoomStore((state) => state.roomCode)
 
+  console.log('🎮 GamePage montado - gameStatus:', gameStatus, 'roomCode:', roomCode)
+
   useEffect(() => {
     if (!roomCode) {
       navigate('/')
